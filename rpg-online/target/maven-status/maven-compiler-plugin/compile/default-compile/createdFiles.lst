@@ -52,6 +52,7 @@ com\examenmayo\domain\effect\StatusEffect.class
 com\examenmayo\domain\service\ShopService$ShopTransaction.class
 com\examenmayo\domain\experience\ExperienceManager.class
 com\examenmayo\domain\model\Jugador$JugadorBuilder.class
+com\examenmayo\console\ConsoleLauncher.class
 com\examenmayo\domain\enums\TipoEfecto.class
 com\examenmayo\domain\experience\ExperienceStrategy.class
 com\examenmayo\console\screens\ShopScreen.class
