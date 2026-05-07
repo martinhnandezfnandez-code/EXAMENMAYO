@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "ralph-wiggum": {
+      "source": "fstandhartinger/ralph-wiggum",
+      "sourceType": "github",
+      "skillPath": "skills/ralph-wiggum/SKILL.md",
+      "computedHash": "746608fdcf30a1451422bdc6936ea9de84c5e4439e0eaca232ac325663d55a5f"
+    }
+  }
+}

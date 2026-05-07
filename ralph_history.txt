@@ -1,0 +1,75 @@
+# Ralph History - RPG Online Project
+
+## 2026-05-07 - Session 1: Initial Project Setup
+
+### Breakthroughs
+- Successfully designed and implemented full DDD architecture for RPG Online
+- Created 7 domain entities (Jugador, Personaje, Inventario, Objeto/Arma/Armadura/Consumible, Clan, Combate, Mision)
+- Implemented 3 DamageStrategy implementations (Physical, Magic, True)
+- Created clean layered architecture: Domain -> Application -> Infrastructure -> Presentation
+- 9 REST controllers with full CRUD + specialized endpoints
+- 26 unit tests covering domain logic
+
+### Design Decisions
+- SINGLE_TABLE inheritance for Objeto hierarchy (performance over normalization)
+- UUID for all entity IDs (distributed-friendly, no auto-increment conflicts)
+- Strategy Pattern for damage calculation (extensible for future damage types)
+- Builder Pattern for entity construction (clean API, avoids telescoping)
+- ProblemDetail for error responses (RFC 9457 standard)
+- H2 for dev/test, PostgreSQL for production
+
+### Blockers
+- None. All specs were designed upfront with clear acceptance criteria.
+
+### Learnings
+- The Ralph methodology of fresh-context-per-spec works well for domain modeling
+- Specs with clear acceptance criteria guide implementation precisely
+- DDD with Clean Architecture creates natural module boundaries
+
+### Next Steps
+- Implement JWT authentication
+- Add WebSocket for real-time combat
+- Create integration tests with Testcontainers
+- Add Redis caching for rankings
+- Implement event sourcing for combat and economy
+
+## 2026-05-07 - Session 2: Extension - Advanced Systems
+
+### Breakthroughs
+- **Experience System**: 3 strategies (Quadratic, Linear, Fibonacci) + ExperienceManager + CharacterProgression
+- **Skill System**: 5 habilidades por clase (25 total) con herencia (Ofensiva, Curativa, Buff) + SkillManager + Factory
+- **Effect System**: State Pattern con 9 estados alterados (Envenenado, Paralizado, Protegido, etc.)
+- **Persistence**: Prisma-like JSON storage con GenericRepository<T> + 5 implementaciones concretas
+- **Console**: Retro ASCII interface estilo Rogue 1980 con 7 screens, game loop MVC
+- **Integration**: Combate extendido con habilidades, maná, cooldowns, estados alterados
+- **36 new files** (28 Java classes + 6 tests + analysis doc + 3 specs)
+
+### Design Decisions
+- CharacterProgression como wrapper (no modificar Personaje JPA directamente)
+- Herencia para habilidades (HabilidadOfensiva, HabilidadCurativa, HabilidadBuff)
+- DataStore como fachada de repositorios (fácil de migrar a PostgreSQL)
+- ConsoleRenderer sin lógica de dominio (pura presentación ASCII)
+- InputHandler desacoplado (fácil de reemplazar por WebSockets)
+
+### New Patterns Added
+- **Factory Pattern**: SkillFactory, RewardFactory
+- **State Pattern**: EffectManager + StatusEffect para estados alterados
+- **Strategy Pattern**: 3 curvas de experiencia
+- **MVC**: Console con Model (Domain) - View (Renderer) - Controller (Screens)
+- **Repository Pattern**: GenericRepository<T> para persistencia abstracta
+
+### Blockers
+- Maven no disponible en el entorno para verificar compilación
+- ANSI escape codes reemplazados por clears multiplataforma
+
+### Total Project Stats
+- 100+ Java files across all layers
+- 32 unit tests (26 original + 6 new)
+- 13 feature specs
+- 7 REST controllers + 7 Console screens
+
+### Next Steps
+- WebSocket para combate multiplayer en tiempo real
+- Redis caching para rankings y sesiones
+- Event Sourcing (CombatEvent, TradeEvent)
+- Migrar persistencia JSON a PostgreSQL real
