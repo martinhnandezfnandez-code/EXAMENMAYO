@@ -28,11 +28,6 @@ public interface RpgMapper {
     @Mapping(target = "inventarioId", source = "inventario.id")
     ObjetoResponse toObjetoResponse(Objeto objeto);
 
-    default ObjetoResponse toObjetoResponseDetalle(Objeto objeto) {
-        if (objeto == null) return null;
-        return toObjetoResponse(objeto);
-    }
-
     @Mapping(target = "liderId", source = "lider.id")
     @Mapping(target = "liderNickname", source = "lider.nickname")
     @Mapping(target = "numeroMiembros", expression = "java(clan.getMiembros().size())")

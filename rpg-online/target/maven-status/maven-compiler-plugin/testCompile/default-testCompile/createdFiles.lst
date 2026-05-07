@@ -1,0 +1,16 @@
+com\examenmayo\domain\model\MisionTest.class
+com\examenmayo\domain\skill\SkillManagerTest.class
+com\examenmayo\domain\experience\ExperienceStrategyTest.class
+com\examenmayo\domain\model\ConsumibleTest.class
+com\examenmayo\domain\model\ArmaTest.class
+com\examenmayo\domain\model\JugadorTest.class
+com\examenmayo\domain\experience\ExperienceManagerTest.class
+com\examenmayo\domain\experience\CharacterProgressionTest.class
+com\examenmayo\domain\model\InventarioTest.class
+com\examenmayo\domain\model\PersonajeTest.class
+com\examenmayo\domain\model\DamageStrategyTest.class
+com\examenmayo\domain\effect\EffectManagerTest.class
+com\examenmayo\domain\skill\SkillFactoryTest.class
+com\examenmayo\domain\model\CombateTest.class
+com\examenmayo\domain\model\PersonajeClaseTest.class
+com\examenmayo\RpgOnlineApplicationTests.class

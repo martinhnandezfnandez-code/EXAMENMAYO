@@ -17,11 +17,10 @@ public class Consumible extends Objeto {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
+    @Column(length = 20)
     private TipoEfecto efecto;
 
     @Positive
-    @Column(nullable = false)
     private int potencia;
 
     @Builder

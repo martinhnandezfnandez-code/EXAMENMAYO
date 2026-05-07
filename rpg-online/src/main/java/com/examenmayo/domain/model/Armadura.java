@@ -14,7 +14,6 @@ import lombok.*;
 public class Armadura extends Objeto {
 
     @PositiveOrZero
-    @Column(nullable = false)
     private int defensaExtra;
 
     @Builder

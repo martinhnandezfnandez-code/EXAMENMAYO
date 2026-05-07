@@ -18,7 +18,7 @@ public class CharacterScreen extends Screen {
     public void show() {
         engine.getRenderer().renderTitle(" PROGRESIÓN DE PERSONAJE ");
 
-        List<String> jugadores = engine.getDataStore().getPlayers().findAll();
+        List<Jugador> jugadores = engine.getDataStore().getPlayers().findAll();
         if (jugadores.isEmpty()) {
             engine.getRenderer().renderInfo("", "No hay jugadores. Crea uno nuevo.");
             System.out.println();

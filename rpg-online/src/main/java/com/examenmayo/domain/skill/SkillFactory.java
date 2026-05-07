@@ -1,6 +1,7 @@
 package com.examenmayo.domain.skill;
 
 import com.examenmayo.domain.enums.ClasePersonaje;
+import com.examenmayo.domain.enums.EstadoEfecto;
 import java.util.*;
 
 public class SkillFactory {

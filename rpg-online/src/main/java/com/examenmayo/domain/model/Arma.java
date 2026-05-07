@@ -14,7 +14,6 @@ import lombok.*;
 public class Arma extends Objeto {
 
     @Positive
-    @Column(nullable = false)
     private int danio;
 
     @Builder
